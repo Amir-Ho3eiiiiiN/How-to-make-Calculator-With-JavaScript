@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> How to make Calculator With JavaScript</title>
+    <link rel="stylesheet" href="./Style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator" name="calc">
+        <input type="text" readonly class="value" name="txt" />
+        <span class="num clear" onclick="btnClick('c')">c</span>
+        <span class="num" onclick="btnClick('/')">/</span>
+        <span class="num" onclick="btnClick('*')">*</span>
+        <span class="num" onclick="btnClick('7')">7</span>
+        <span class="num" onclick="btnClick('8')">8</span>
+        <span class="num" onclick="btnClick('9')">9</span>
+        <span class="num" onclick="btnClick('-')">-</span>
+        <span class="num" onclick="btnClick('4')">4</span>
+        <span class="num" onclick="btnClick('5')">5</span>
+        <span class="num" onclick="btnClick('6')">6</span>
+        <span class="num plus" onclick="btnClick('+')">+</span>
+        <span class="num" onclick="btnClick('1')">1</span>
+        <span class="num" onclick="btnClick('2')">2</span>
+        <span class="num" onclick="btnClick('3')">3</span>
+        <span class="num" onclick="btnClick('0')">0</span>
+        <span class="num" onclick="btnClick('00')">00</span>
+        <span class="num" onclick="btnClick('.')">.</span>
+        <span class="num equal" onclick="equal()">=</span>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let input = document.querySelector(".value");
+      function btnClick(val) {
+        if (val != "c") input.value += val;
+        else input.value = "";
+      }
+      function equal() {
+        input.value = eval(input.value);
+      }
+    </script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelector(".container"), {
+        max: 15,
+        speed: 400,
+      });
+    </script>
+  </body>
+</html>
